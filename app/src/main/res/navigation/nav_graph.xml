@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/teamsFragment">
+
+    <fragment
+        android:id="@+id/teamsFragment"
+        android:name="com.qourall.pplcricket.ui.fragments.TeamsFragment"
+        android:label="fragment_teams"
+        tools:layout="@layout/fragment_teams" >
+        <action
+            android:id="@+id/action_teamsFragment_to_teamDetailFragment"
+            app:destination="@id/teamDetailFragment" />
+        <action
+            android:id="@+id/action_teamsFragment_to_addTeamFragment"
+            app:destination="@id/addTeamFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.qourall.pplcricket.ui.fragments.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/teamDetailFragment"
+        android:name="com.qourall.pplcricket.ui.fragments.TeamDetailFragment"
+        android:label="fragment_team_detail"
+        tools:layout="@layout/fragment_team_detail" >
+        <action
+            android:id="@+id/action_teamDetailFragment_to_memberDetailFragment"
+            app:destination="@id/memberDetailFragment" />
+        <action
+            android:id="@+id/action_teamDetailFragment_to_addMemberFragment"
+            app:destination="@id/addMemberFragment" />
+        <argument
+            android:name="team_name"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/memberDetailFragment"
+        android:name="com.qourall.pplcricket.ui.fragments.MemberDetailFragment"
+        android:label="fragment_member_detail"
+        tools:layout="@layout/fragment_member_detail" >
+        <argument
+            android:name="member_name"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/addMemberFragment"
+        android:name="com.qourall.pplcricket.ui.fragments.AddMemberFragment"
+        android:label="fragment_add_member"
+        tools:layout="@layout/fragment_add_member" >
+        <argument
+            android:name="team_name"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/addTeamFragment"
+        android:name="com.qourall.pplcricket.ui.fragments.AddTeamFragment"
+        android:label="fragment_add_team"
+        tools:layout="@layout/fragment_add_team" />
+</navigation>
